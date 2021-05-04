@@ -11,7 +11,7 @@ def geeks():
         "3. Multiply\n"
         "4. Divide\n")
 
-    select = int(input("Select operations form 1, 2, 3, 4 :")) # Take input from the user
+    select = int(input("Select operations form 1, 2, 3, 4 : ")) # Take input from the user
     def add(num1, num2):  # Function to add two numbers
         return num1 + num2
 
@@ -56,7 +56,7 @@ def sand():
     
 
 
-calc = int(input("Type of Calculator: 1. Geeks for geeks 2. Sandeep's"))
+calc = int(input("Type of Calculator: 1. Geeks for geeks 2. Sandeep's \n"))
 if calc == 1:
     geeks()
 elif calc == 2:
