@@ -47,6 +47,12 @@ def geeks():
 
 def sand():
     print("kay let's start!")
+    print("""Here is the menu.
+    1. add
+    2. sub
+    3. multiply
+    4. divide and get remainder
+    5. all""")
     
 
 
