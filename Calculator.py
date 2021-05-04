@@ -2,8 +2,6 @@
 ''' Ok
 Now Let's get started.
 '''
-print("Hi! So lets start with making a simple calculator.")
-
 def geeks():
     print("Please select operation -\n"
         "1. Add\n"
@@ -53,9 +51,12 @@ def sand():
     3. multiply
     4. divide and get remainder
     5. all""")
-    
+    expression = input("Enter your math equation:\n")
+    expression.strip().replace(" ","") # Got the expression, so removing the spaces or whitespaces from the front and end, and anywhere else. Probably the same as expression.replace(" ","")
 
 
+
+print("Hi! So lets start with making a simple calculator.")
 calc = int(input("Type of Calculator: 1. Geeks for geeks 2. Sandeep's \n"))
 if calc == 1:
     geeks()
