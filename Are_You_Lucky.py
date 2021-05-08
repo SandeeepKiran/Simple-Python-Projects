@@ -5,6 +5,17 @@ Finally checking if the value obtained (4) is a fibonacci series number.
 If it is, output: You are Lucky, else output: You are Unlucky.
 '''
 
+#'''
+def single_digit_function(value):
+    sum = 0
+    while(value > 0 or sum > 9): # if 157 or 1+5+7 = 13 which is > 9
+        if(value == 0): # then reset the values, new value = 13, sum = 0
+            value = sum
+            sum = 0
+        sum += int(value % 10)
+        value /= 10
+    return int(sum) # cause sum is now < 9 and value = 0 from the division.
+#'''
 
 # Obtain User's name
 name = input("Your Name: \n").lower().replace(" ","")
@@ -15,10 +26,13 @@ for letter in name:
     val = val+ord(letter)-96
 print("The value of your name is: " + str(val))
 # Find the Single Digit value
+single_digit = single_digit_function(val)
+''' For a 0(1) function, use below.
 if val % 9 == 0:
     single_digit = 9
 else:
     single_digit = val % 9
+'''
 print("The single digit is: " + str(single_digit))
 # Find if Single Digit value is a Fibonacci Series
 luck = x = y = 1
