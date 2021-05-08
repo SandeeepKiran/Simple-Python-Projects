@@ -5,54 +5,31 @@ Finally checking if the value obtained (4) is a fibonacci series number.
 If it is, output: You are Lucky, else output: You are Unlucky.
 '''
 
-name = input("Your Name: \n").lower()
-print(name)
+
+# Obtain User's name
+name = input("Your Name: \n").lower().replace(" ","")
+print("Your name is: " + name)
+# Find the value of the name
 val=0
 for letter in name:
     val = val+ord(letter)-96
-print(val)
-
+print("The value of your name is: " + str(val))
+# Find the Single Digit value
 if val % 9 == 0:
-    single_digit = val
+    single_digit = 9
 else:
     single_digit = val % 9
-print(single_digit)
-
-x = 0
-y = 1
-if single_digit == x or single_digit == y:
-    print("Lucky")
+print("The single digit is: " + str(single_digit))
+# Find if Single Digit value is a Fibonacci Series
+luck = x = y = 1
+if single_digit == 0 or single_digit == 1:
+    luck = 0
 for i in range(6):
     if single_digit == x + y:
-        print("Lucky")
-        x = 0
+        luck = 0
         break
     temp = x + y
     x = y
     y = temp
-if x != 0:
-    print("Unlucky")
-    
-''' My Code:
-if val>10:
-    sum=0
-def single_digit():
-    while(val>10 and sum<10):
-        sum = sum + int(val % 10)
-        val = int(val/10)
-        print(sum)
-        print(val)
-        sum = = sum + int(val % 10)
-    return sum 
-''' ''' GeeksforGeeks 0(1)
-def digSum(val):
-    sum = 0
-    while(val > 0 or sum > 9):
-        if(val == 0):
-            val = sum
-            sum = 0
-        sum += val % 10
-        val /= 10
-    return sum
-'''
-
+# Output if lucky or not
+print("Woah, you are Lucky af" if luck == 0 else "Damn, you are so Unlucky")
