@@ -45,15 +45,32 @@ def geeks():
 
 def sand():
     print("kay let's start!")
-    print("""Here is the menu.
-    1. add
-    2. sub
-    3. multiply
-    4. divide and get remainder
-    5. all""")
     expression = input("Enter your math equation:\n")
-    expression.strip().replace(" ","") # Got the expression, so removing the spaces or whitespaces from the front and end, and anywhere else. Probably the same as expression.replace(" ","")
-
+    # Got the expression, so removing the spaces or whitespaces from the front and end, and anywhere else. Probably the same as expression.replace(" ","")
+    print(expression)
+    expression = list(expression)
+    print(expression)
+    while(len(expression)>1):
+        for i in range(len(expression)):
+            if expression[i] == "/":
+                expression[i-1:i+1] = int(expression[i-1])/int(expression[i+1])
+                print(expression)
+            elif expression[i] == "*":
+                expression[i-1:i+1] = int(expression[i-1])*int(expression[i+1])
+                print(expression)
+            elif expression[i] == "+":
+                expression[i-1:i+1] = int(expression[i-1])+int(expression[i+1])
+                print(expression)
+            elif expression[i] == "-":
+                expression[i-1:i+1] = int(expression[i-1])-int(expression[i+1])
+                print(expression)
+            '''else:
+                if expression[i].count('1', '2', '3', '4', '5', '6', '7', '8', '9'):
+                    print("You sure you used numbers?")'''
+    if len(expression) == 1:
+        print(expression)
+    else: 
+        print("Something went wrong")
 
 
 print("Hi! So lets start with making a simple calculator.")
